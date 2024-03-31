@@ -1,10 +1,10 @@
 import streamlit as st
-import pickle
+import joblib
 
 import pandas as pd
 
 # Load your machine learning model
-model=pickle.load(open("crop.pkl",'rb'))
+model=joblib.load("crop.pkl")
 
 
 
@@ -13,13 +13,13 @@ st.title("Crop Recommendation System")
 
 
 def user_report():
-    N=st.slider("Nitrogen",0,200,1)
-    P=st.slider("phosphorous",0,200,1)
-    K= st.slider("potassium", 0, 200, 1)
-    temperature = st.slider("temperature", 0, 100, 1)
-    humidity= st.slider("humidity", 0, 200, 1)
-    ph = st.slider("ph", 1, 14, 1)
-    rainfall = st.slider("rainfall", 0, 200, 1)
+    N=st.slider("Nitrogen",0.0,200.00,1.00)
+    P=st.slider("phosphorous",0.0,200.00,1.00)
+    K= st.slider("potassium", 0.0, 200.00, 1.00)
+    temperature = st.slider("temperature", 0.0, 100.00, 1.00)
+    humidity= st.slider("humidity", 0.0, 200.00, 1.00)
+    ph = st.slider("ph", 0.0, 14.00, 1.00)
+    rainfall = st.slider("rainfall", 0.0, 200.00, 1.00)
 
 
     user_report_data={
@@ -41,8 +41,19 @@ st.header("Soil features: ")
 st.write(user_data)
 
 crop=model.predict(user_data)
-st.subheader('Crop recommended: ')
-st.subheader(str(crop))
+crop = ' '.join(map(str, crop))
+
+if st.checkbox("Show Result"):
+    st.subheader('This system suggest to grow {} in this soil.'.format(crop))
+
+
+st.text("")
+st.text("")
+st.text("")
+st.text("")
+
+st.markdown("© All rights reserved.")
+
 
 
 
