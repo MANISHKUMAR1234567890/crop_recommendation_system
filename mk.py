@@ -13,13 +13,13 @@ st.title("Crop Recommendation System")
 
 
 def user_report():
-    N=st.slider("Nitrogen",0.0,200.00,1.00)
-    P=st.slider("phosphorous",0.0,200.00,1.00)
-    K= st.slider("potassium", 0.0, 200.00, 1.00)
-    temperature = st.slider("temperature", 0.0, 100.00, 1.00)
-    humidity= st.slider("humidity", 0.0, 200.00, 1.00)
+    N=st.slider("Nitrogen(in mg/kg)",0.0,200.00,1.00)
+    P=st.slider("phosphorous(in mg/kg)",0.0,200.00,1.00)
+    K= st.slider("potassium(in mg/kg)", 0.0, 200.00, 1.00)
+    temperature = st.slider("temperature(in degree celcius)", 0.0, 50.00, 1.00)
+    humidity= st.slider("humidity(in %)", 0.0, 200.00, 1.00)
     ph = st.slider("ph", 0.0, 14.00, 1.00)
-    rainfall = st.slider("rainfall", 0.0, 200.00, 1.00)
+    rainfall = st.slider("rainfall(in mm)", 0.0, 200.00, 1.00)
 
 
     user_report_data={
