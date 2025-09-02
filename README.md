@@ -10,3 +10,6 @@ Nutrient levels(Nitrogen , phosphorous, potassium) ,
 **Dataset**:
 The model was trained on a dataset containing information about various crops along with corresponding environmental factors.
 
+
+Blog post: https://medium.com/@manishk97253/crop-recommendation-system-using-machine-learning-4b3a09e4695a
+
